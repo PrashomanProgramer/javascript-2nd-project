@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript Project.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div id="mainlogin">
+        <div class="container">
+            <h2>LogIn this Page</h2>
+            <div class="login">
+                      <label for="email">Email address:</label>
+                      <input type="email" class="form-control" placeholder="enter your email" id="email">
+                     <br>
+                      <label for="pwd">Password:</label>
+                      <input type="password" class="form-control" placeholder="enter password" id="pwd">
+                      <br>
+                     <button class="btn btn-success" id="btn"> login</button>
+                  
+            </div>
+        </div>
+    </div>
+
+    <div id="mainproject">
+        <div class="row elements">
+            <div class="col-md-4">
+                <div class="Diposit stutas">
+                    <h3>Deposit</h3>
+                    <h2>$<span id="diposit$">00</span></h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="Withdraw stutas">
+                    <h3>Withdraw</h3>
+                    <h2> $<span id="withdraw$">00</span></h2>
+                </div>
+             </div>
+            <div class="col-md-4">
+                <div class="Balance stutas">
+                    <h3>Balance</h3>
+                    <h2>$<span id="balanced">500</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="login">
+                    <h4>Deposit</h4>
+                    <input type="text" class="form-control" placeholder="$ amount you want to Deposit" id="deposit">
+                    <br>
+                    <button class="btn btn-success" id="btned">Enter</button>
+                </div>
+
+             </div>
+            <div class="col-md-6">
+                <div class="login">
+                    <h4> Withdraw</h4>
+                    <input type="text" class="form-control" placeholder="$ amount you want to Withdraw" id="withdraw">
+                    <br>
+                    <button class="btn btn-success" id="btnew">Enter</button>
+                </div>
+             </div>
+        </div>
+         
+          
+     </div>   
+    
+    <script>
+        const enterDbtn = document.getElementById('btned');
+        const enterWbtn = document.getElementById('btnew');
+        const deposit = document.getElementById('deposit');
+        const withdraw = document.getElementById('withdraw')
+        const btnlogin = document.getElementById('btn');
+        const diposit1 = document.getElementById('diposit$');
+        const balancedipu = document.getElementById('balanced');
+        const withdraw1 = document.getElementById('withdraw$');
+        btnlogin.addEventListener('click', function(){
+            /*mainlogin star*/
+            const fromdiv = document.getElementById('mainlogin');
+            const main = document.getElementById('mainproject');
+            fromdiv.style.display = 'none';
+            main.style.display = 'block';
+            /*mainlogin end*/
+        })
+         
+        enterDbtn.addEventListener('click', function(){
+            /*diposit show start*/
+            const depuvalo = parseFloat(deposit.value);
+            deposit.value = "";
+            const diposite =parseFloat(diposit1.innerText);
+            const total_diposite = parseFloat(diposite+depuvalo);
+            //console.log(total_diposite);
+            diposit1.innerText = total_diposite;
+           /*diposit show end*/
+           const dipositebalance = parseFloat(balancedipu.innerText);
+            const total_balancedipu = parseFloat(dipositebalance+depuvalo);
+            balancedipu.innerText = total_balancedipu;
+
+         
+    })
+        enterWbtn.addEventListener('click', function(){
+            const withdrawvelo =parseFloat(withdraw.value) ;
+            //console.log(withdrawvelo);
+            withdraw.value= '';
+            const withdsite =parseFloat(withdraw1.innerText);
+            const total_withdraw = parseFloat(withdsite + withdrawvelo);
+            withdraw1.innerText = total_withdraw;
+
+            const dipositebalance = parseFloat(balancedipu.innerText);
+            const  totalban = parseFloat(dipositebalance-1*total_withdraw);
+            balancedipu.innerText = totalban;
+            
+        })
+    </script>
+</body>
+</html>

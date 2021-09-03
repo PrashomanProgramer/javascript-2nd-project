@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container h2{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.login{
+     padding: 50px;
+    margin-top: 40px;
+    border-radius: 10px;
+     border: 2px ghostwhite solid;
+    box-shadow: 10px 10px 5px gray;
+    margin-top: 60px;
+}
+#mainproject{
+    display: none;
+}
+.Diposit{
+    
+    background-color: slateblue;
+}
+.Withdraw{
+    
+    background-color: rgb(87, 170, 145);
+}
+.Balance{
+    
+    background-color: rgb(231, 228, 52);
+}   
+.elements{
+    margin-top: 70px;
+}
+.stutas{
+    margin: 0 20px;
+    padding: 30px;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 2px 3px 3px rgb(175, 235, 243);
+    font-size: 20px;
+}
